@@ -63,7 +63,7 @@ function! HugoPost(title)
     exe "e " . g:hugo_path . g:hugo_post_dirs . file_name
 
     let template = ["---", "title: \"" . title . "\"", "date: " . created, "image: ", "tags: ", "  - "]
-    call extend(template,["---", ""])
+    call extend(template,["---", "", "", "{{< graphcomment >}}"])
 
     let err = append(0, template)
   else
